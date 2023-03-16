@@ -1,4 +1,4 @@
-//이분탐색 구현
+//
 #include <iostream>
 #include <algorithm>
 #include <utility>
@@ -55,7 +55,7 @@ int main() {
 	return 0;
 }
 
-//dp, stack 구현
+//dp, stack
 #include <iostream>
 #include <stack>
 using namespace std;
