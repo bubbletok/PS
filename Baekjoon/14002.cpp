@@ -55,7 +55,7 @@ int main() {
 	return 0;
 }
 
-//dp, stack
+//DP, 스택
 #include <iostream>
 #include <stack>
 using namespace std;
