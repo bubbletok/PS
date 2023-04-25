@@ -1,4 +1,4 @@
-//ÀÌºĞÅ½»ö ±¸Çö
+//
 #include <iostream>
 #include <algorithm>
 #include <utility>
@@ -55,7 +55,7 @@ int main() {
 	return 0;
 }
 
-//dp, stack ±¸Çö
+//DP, ìŠ¤íƒ
 #include <iostream>
 #include <stack>
 using namespace std;
