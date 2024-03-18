@@ -38,16 +38,6 @@ bool AllZero(string& s) {
 	return true;
 }
 
-int BruteForce(string& s) {
-	long long int num = changeToInt(s);
-	int cnt = 0;
-	for (int i = 1; i <= num; i++) {
-		string s = "";
-
-	}
-	return cnt;
-}
-
 int main() {
 	string s;
 	cin >> s;
@@ -61,11 +51,9 @@ int main() {
 	}
 	else {
 		long long int num = changeToInt(s);
-		//cout << num << endl;
 		for (int i = 1; i < s.size(); i++) {
 			ans += dp[i];
 		}
-		//cout << "Current Ans: " << ans << endl;
 		if (!(s[0] == '1' && AllZero(s)))
 		{
 			string frontHalf;
@@ -82,8 +70,6 @@ int main() {
 
 			string frontHalfReverse = reverse(frontHalf);
 			
-			//cout << frontHalf << " " << backHalf << " " << frontHalfReverse << endl;
-			
 			int cnt = 0;
 
 			if (frontHalfReverse <= backHalf)	
@@ -93,8 +79,6 @@ int main() {
 			else {
 				cnt = changeToInt(frontHalf) - 1;
 			}
-
-			//cout << cnt << endl;
 			ans += cnt - pow(10, frontHalf.size() - 1) + 1;
 		}
 	}
