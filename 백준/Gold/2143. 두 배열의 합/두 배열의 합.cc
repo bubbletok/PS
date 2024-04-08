@@ -55,21 +55,13 @@ int main() {
 	}
 
 	sort(subB.begin(), subB.end());
-	//int tmp = 6;
-	//cout << binary_search(subB.begin(), subB.end(), tmp) << endl;
-	//cout << upper_bound(subB.begin(), subB.end(), tmp) - subB.begin() << endl;
-	//cout << lower_bound(subB.begin(), subB.end(), tmp) - subB.begin() << endl;
 
 	for (int i = 0; i < subA.size(); i++) {
 		long long dif = t - subA[i];
 		if (!binary_search(subB.begin(), subB.end(), dif)) continue;
 		int upper = upper_bound(subB.begin(), subB.end(), dif) - subB.begin();
 		int lower = lower_bound(subB.begin(), subB.end(), dif) - subB.begin();
-		//cout << "dif: " << dif << " upper: " << upper << " lower: " << lower << endl;
 		int cnt = upper - lower;
-		/*if (upper == lower && subB[lower] == dif) cnt++;
-		else if (subB[upper] == dif && subB[upper] == subB[upper - 1]) cnt++;
-		*/
 		ans += cnt;
 	}
 	cout << ans;
