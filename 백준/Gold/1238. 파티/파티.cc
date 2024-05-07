@@ -6,7 +6,7 @@ using namespace std;
 vector<pair<int,int>> nor_graph[1001];
 vector<pair<int,int>> rev_graph[1001];
 int n,m,x;
-void dijkstra(int start, vector<int>& dist, vector<pair<int,int>> graph[]){
+void dijkstra(int start, vector<int>& dist, vector<pair<int,int>>* graph){
 	dist[start] = 0;
 	priority_queue<pair<int,int>> q;
 	q.push({0,start});
