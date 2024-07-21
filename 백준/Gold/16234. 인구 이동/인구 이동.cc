@@ -52,13 +52,14 @@ int main() {
 			cin >> arr[i][j];
 		}
 	}
-	for (int a = 0; a < n * n; a++) {
+	for (int a = 0; a < n*n; a++) {
 		bool found = false;
 		bool check[101][101];
 		vector<pair<vector<pair<int,int>>, int>> v;
 		memset(check, false, sizeof(check));
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
+				if (check[i][j]) continue;
 				if (bfs(j, i, check, v)) {
 					found = true;
 				}
