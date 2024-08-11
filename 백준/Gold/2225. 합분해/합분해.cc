@@ -9,12 +9,6 @@ int n, k;
 ll dp[201][201];
 ll divisor = 1000000000;
 
-void cal(int a, int b) {
-    for (int i = a; i >= 0; i--) {
-        dp[a][b] += dp[i][b-1] % divisor;
-        dp[a][b] %= divisor;
-    }
-}
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
@@ -29,16 +23,9 @@ int main() {
     }
     for (int i = 1; i <= n; i++) {
         for (int j = 2; j<=k; j++) {
-            cal(i, j);
+            dp[i][j] = (dp[i - 1][j]%divisor + dp[i][j - 1]%divisor)%divisor;
         }
     }
-    /*for (int i = 0; i <= n; i++) {
-        cout << "num: " << i << ", ";
-        for (int j = 1; j <= k; j++) {
-            cout << dp[i][j] << "\t";
-        }
-        cout << endl;
-    }*/
     cout << dp[n][k] % divisor;
     return 0;
 }
