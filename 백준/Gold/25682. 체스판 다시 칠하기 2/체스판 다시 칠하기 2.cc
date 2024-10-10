@@ -1,18 +1,11 @@
 #include <iostream>
-#include <string.h>
-#include <string>
-#include <deque>
-#include <algorithm>
-#include <vector>
-#include <stack>
-#include <cmath>
-#include <map>
-#include <queue>
 using namespace std;
 using ll = long long;
 int n, m, k;
 char arr[2001][2001];
-int dp[2][2001][2001] = { 0 }; // dp[0]: 맨 처음이 B일 때 고쳐야 되는 개수
+int dp[2][2001][2001] = { 0 };
+// dp[0]: 맨 처음이 B일 때 고쳐야 되는 개수
+// dp[1]: 맨 처음이 W일 때 고쳐야 되는 개수
 
 int main() {
     ios::sync_with_stdio(false);
@@ -36,8 +29,7 @@ int main() {
 
     int ans = 2000*2000+2000;
     for (int i = 0; i <= n - k; i++) {
-        for (int j = 0; j <= m - k; j++) {
-            int idx = (i + j);            
+        for (int j = 0; j <= m - k; j++) {           
             int fb = dp[0][i + k][j + k] - dp[0][i][j + k] - dp[0][i + k][j] + dp[0][i][j];
             int fw = dp[1][i + k][j + k] - dp[1][i][j + k] - dp[1][i + k][j] + dp[1][i][j];
             int tmp = min(fb, fw);
