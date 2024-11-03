@@ -17,9 +17,7 @@ int main() {
 
 	for (int i = 1; i <= n; i++) {
 		for (int k = 1; k <= 15000; k++) {
-			dp[i][k] = dp[i][k] || dp[i - 1][abs(k - w[i])];
-			dp[i][k] = dp[i][k] || dp[i - 1][k + w[i]];
-			dp[i][k] = dp[i][k] || dp[i - 1][k];
+			dp[i][k] = dp[i][k] || dp[i - 1][abs(k - w[i])] || dp[i - 1][k + w[i]] || dp[i - 1][k];
 		}
 	}
 
